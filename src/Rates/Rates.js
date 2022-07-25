@@ -23,7 +23,7 @@ export const Rates = () => {
           <iframe
             frameborder="0"
             allowfullscreen
-            src="https://docs.google.com/spreadsheets/d/1CvCZXpMZQSnPwlvu4hOtWqalyVyyxS7fB4jKen3oOss/edit?usp=sharing"
+            src="https://docs.google.com/spreadsheets/d/1bY91QncAG5SMqz78hPT4AeFQ5iSpsOOzbGrSWgO4y1w/edit?usp=sharing"
           ></iframe>
         </div>
       </>
