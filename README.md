@@ -1,71 +1,49 @@
-# Getting Started with Create React App
+# MVP Rate change notification
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What's here
 
-## Available Scripts
+Web application with a basic login and a google sheet embed. There are two parts to this app:
+- Google Sheets Apps Script
+- Simple React App
 
-In the project directory, you can run:
+It all starts with a simple React app that has an Auth0 login.  
 
-### `npm start`
+<img width="1439" alt="Screen Shot 2022-07-24 at 21 14 32" src="https://user-images.githubusercontent.com/80781808/180671873-82be174a-6716-4a30-ba22-c935b5d5629d.png">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The decision to use this login manager was to facilitate access with the google account.  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<img width="1418" alt="Screen Shot 2022-07-24 at 21 15 18" src="https://user-images.githubusercontent.com/80781808/180671903-d744af41-d223-4283-90f9-e38107d92a9a.png">
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+After logging in, and if we have the necessary permissions in the spreadsheet, an embedded Google Sheets is displayed. We have the possibility to edit the values of the "Rate" column.
 
-### `npm run build`
+<img width="1439" alt="Screen Shot 2022-07-24 at 21 16 55" src="https://user-images.githubusercontent.com/80781808/180671992-1a11069e-2d75-49b3-bf42-c681e94b298b.png">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Any edition made in the "rates" column causes an email to be sent automatically informing of the change to the email in the column on the right.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img width="1417" alt="Screen Shot 2022-07-24 at 21 19 05" src="https://user-images.githubusercontent.com/80781808/180672090-e1b9556a-67a9-4072-98e0-194fe371d83e.png">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Screen Shot 2022-07-24 at 21 23 14](https://user-images.githubusercontent.com/80781808/180672283-dc79de2f-7522-4c3e-b2c7-78cc6d61514a.png)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contributing Google Sheets Apps Script
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The code that is executed when the value of a rate is edited can be found in the Apps Script section of the same spreadsheet.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+It is located as Extensions > App Script in the spreadsheet.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The code is under the name of [RateChange](https://script.google.com/home/projects/1NkRLeisAjKEFAM_DKa1CQgdlRCqODjFQKy8vl4hTPHrLnrkGx6N9DVR5/edit).
 
-## Learn More
+In the "triggers" section we can see the trigger that is executed when editing the spreadsheet.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contributing React App
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# rates
+1. **Fork this repo**   
+2. **Git clone**
+    ```bash
+    $ git clone git@github.com:mariasofiapigino/rates.git
+    ```
+3. **NPM install**
+    ```bash
+    $ npm install
+    ```
