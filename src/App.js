@@ -1,24 +1,27 @@
 import "./App.css";
-import { LoginButton } from "./Login";
 import { Rates } from "./Rates/Rates";
-import { LogoutButton } from "./Logout";
+import { Navbar } from "./Navbar";
+import { Home } from "./Home";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
   const { isAuthenticated } = useAuth0();
+
   return (
-    <div className="App">
-      <header className="App-header">
+    <>
+      <Navbar />
+      <div>
         {isAuthenticated ? (
           <>
             <Rates />
-            <LogoutButton />
           </>
         ) : (
-          <LoginButton />
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 offset-3 float-md-center container">
+            <Home />
+          </div>
         )}
-      </header>
-    </div>
+      </div>
+    </>
   );
 }
 
