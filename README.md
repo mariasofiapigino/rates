@@ -47,3 +47,9 @@ In the "triggers" section we can see the trigger that is executed when editing t
     ```bash
     $ npm install
     ```
+## Possible improvements
+Considering that the application should iterate and improve, some possible improvements are:
+
+- Think if the user registry is needed for more issues and if it makes sense to have their own management
+- Unit tests in application in React
+- Use of Docker
